@@ -1,7 +1,31 @@
+using System.Reflection;
 using Ardalis.GuardClauses;
+using Microsoft.EntityFrameworkCore;
 
 namespace RiverBooks.Books;
 
+public class BookDbContext : DbContext
+{
+    internal DbSet<Book> Books { get; set; }
+const string Schema = "Books";
+    public BookDbContext(DbContextOptions options):base(options)
+    {
+        
+    }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.HasDefaultSchema(Schema);
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+    }
+
+    protected override void ConfigureConventions(
+        ModelConfigurationBuilder configurationBuilder)
+    {
+        //All our decimal properties will have a precision of 18 and a scale of 6
+        configurationBuilder.Properties<decimal>()
+            .HavePrecision(18, 6);
+    }
+}
 internal class Book
 {
     public Guid Id { get; private set; } = Guid.NewGuid();
