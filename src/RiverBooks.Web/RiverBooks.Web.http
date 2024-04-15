@@ -3,3 +3,6 @@
 GET {{RiverBooks.Web_HostAddress}}/books
 Accept: application/json
 ###
+@BookID = TODO Set a GUID
+GET {{RiverBooks.Web_HostAddress}}/books/{{BookID}}
+Accept: application/json

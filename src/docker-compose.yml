@@ -1,0 +1,16 @@
+﻿services:
+  riverbooks.web:
+    image: riverbooks.web
+    build:
+      context: .
+      dockerfile: RiverBooks.Web/Dockerfile
+  sql:
+    image: mcr.microsoft.com/azure-sql-edge
+    container_name: sql
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: "1"
+      MSSQL_SA_PASSWORD: "MyStrongPass123"
+      MSSQL_PID: "Developer"
+      MSSQL_USER: "SA"
