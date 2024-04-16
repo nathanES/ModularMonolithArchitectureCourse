@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Builder;
 namespace RiverBooks.Books;
 
 //FastEndpoints
-internal class ListBooksEndpoint(IBookService bookService) : EndpointWithoutRequest<ListBooksResponse>
+internal class List(IBookService bookService) : EndpointWithoutRequest<ListBooksResponse>
 {
     //Using REPR design pattern.
     private readonly IBookService _bookService = bookService;
@@ -23,5 +23,9 @@ internal class ListBooksEndpoint(IBookService bookService) : EndpointWithoutRequ
             Books = books
         });
     }
-    
+}
+
+public class ListBooksResponse
+{
+    public List<BookDTO> Books { get; set; } = new List<BookDTO>();
 }

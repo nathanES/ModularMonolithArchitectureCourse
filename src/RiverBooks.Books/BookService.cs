@@ -35,10 +35,10 @@ internal class BookService : IBookService
 
     public async Task DeleteBookAsync(Guid id)
     {
-        var bookToDelete = _bookRepository.GetByIdAsync(id);
+        var bookToDelete = await _bookRepository.GetByIdAsync(id);
         if (bookToDelete is not null)
         {
-            await _bookRepository.DeleteAsync(bookToDelete.Result);
+            await _bookRepository.DeleteAsync(bookToDelete);
             await _bookRepository.SaveChangesAsync();
         }
     }

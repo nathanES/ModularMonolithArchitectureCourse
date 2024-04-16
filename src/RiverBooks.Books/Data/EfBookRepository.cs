@@ -18,7 +18,7 @@ internal class EfBookRepository : IBookRepository
 
     public async Task<List<Book>> ListAsync()
     {
-        return await _dbContext.Books.ToListAsync();
+        return  await _dbContext.Books.ToListAsync();
     }
 
     public Task AddAsync(Book book)

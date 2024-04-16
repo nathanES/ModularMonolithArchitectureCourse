@@ -3,6 +3,35 @@
 GET {{RiverBooks.Web_HostAddress}}/books
 Accept: application/json
 ###
-@BookID = TODO Set a GUID
+@BookID = a89f6cd7-4693-457b-9009-02205dbbfe45
 GET {{RiverBooks.Web_HostAddress}}/books/{{BookID}}
 Accept: application/json
+###
+POST {{RiverBooks.Web_HostAddress}}/books
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": "a7c61e41-3953-42cd-8f88-d3f698869b35",
+  "title": "The Return of the Modular Monolith",
+  "author": "ESSLINNA",
+  "price": 82.90000
+}
+###
+
+# Test the location header
+GET {{RiverBooks.Web_HostAddress}}/books/a7c61e41-3953-42cd-8f88-d3f698869b35
+Accept: application/json
+
+###
+DELETE  {{RiverBooks.Web_HostAddress}}/books/a7c61e41-3953-42cd-8f88-d3f698869b35
+Accept: application/json
+###
+POST {{RiverBooks.Web_HostAddress}}/books/a7c61e41-3953-42cd-8f88-d3f698869b35/pricehistory
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": "a7c61e41-3953-42cd-8f88-d3f698869b35",
+  "newprice": 32.90000
+}

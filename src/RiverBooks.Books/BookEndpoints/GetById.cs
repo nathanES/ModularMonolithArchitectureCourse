@@ -2,7 +2,7 @@ using FastEndpoints;
 
 namespace RiverBooks.Books;
 
-internal class GetBookIdEndpoint(IBookService bookService) :
+internal class GetById(IBookService bookService) :
     Endpoint<GetBookByIdRequest, BookDTO>
 {
     private readonly IBookService _bookService = bookService;
@@ -23,5 +23,9 @@ internal class GetBookIdEndpoint(IBookService bookService) :
 
         await SendAsync(book);
     }
+}
 
+public class GetBookByIdRequest
+{
+    public Guid Id { get; set; }
 }

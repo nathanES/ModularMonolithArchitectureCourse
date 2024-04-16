@@ -1,9 +1,4 @@
 ﻿services:
-  riverbooks.web:
-    image: riverbooks.web
-    build:
-      context: .
-      dockerfile: RiverBooks.Web/Dockerfile
   sql:
     image: mcr.microsoft.com/azure-sql-edge
     container_name: sql
