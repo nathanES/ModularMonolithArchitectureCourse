@@ -10,22 +10,22 @@ internal class BookService : IBookService
     }
 
 
-    public async Task<List<BookDTO>> ListBooksAsync()
+    public async Task<List<BookDto>> ListBooksAsync()
     {
         var books = (await _bookRepository.ListAsync())
-            .Select(book => new BookDTO(book.Id, book.Title, book.Author, book.Price))
+            .Select(book => new BookDto(book.Id, book.Title, book.Author, book.Price))
             .ToList();
         return books;
     }
 
-    public async Task<BookDTO> GetBookByIdAsync(Guid id)
+    public async Task<BookDto> GetBookByIdAsync(Guid id)
     {
         var book = await _bookRepository.GetByIdAsync(id);
         //TODO handle not found case
-        return new BookDTO(book!.Id, book.Title, book.Author, book.Price);
+        return new BookDto(book!.Id, book.Title, book.Author, book.Price);
     }
 
-    public async Task CreateBookAsync(BookDTO newBook)
+    public async Task CreateBookAsync(BookDto newBook)
     {
         var book = new Book(newBook.Id, newBook.Title, newBook.Author, newBook.Price);
         await _bookRepository.AddAsync(book);

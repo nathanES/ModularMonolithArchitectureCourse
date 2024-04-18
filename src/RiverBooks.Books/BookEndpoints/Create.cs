@@ -2,7 +2,7 @@ using FastEndpoints;
 
 namespace RiverBooks.Books;
 
-internal class Create(IBookService bookService) : Endpoint<CreateBookRequest, BookDTO>
+internal class Create(IBookService bookService) : Endpoint<CreateBookRequest, BookDto>
 {
     private readonly IBookService _bookService = bookService;
 
@@ -13,7 +13,7 @@ internal class Create(IBookService bookService) : Endpoint<CreateBookRequest, Bo
     }
     public override async Task HandleAsync(CreateBookRequest request, CancellationToken ct)
     {
-        var newBookDTO = new BookDTO(request.Id ?? Guid.NewGuid(),
+        var newBookDTO = new BookDto(request.Id ?? Guid.NewGuid(),
             request.Title,
             request.Author,
             request.Price);

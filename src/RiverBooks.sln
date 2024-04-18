@@ -12,7 +12,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.Books.Tests", "..\Tests\RiverBooks.Books.Tests\RiverBooks.Books.Tests.csproj", "{77A7BF83-771E-4F4A-8024-D2B157EDDD09}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.Books.Tests", "..\Tests\RiverBooks.Books.Tests\RiverBooks.Books.Tests.csproj", "{25B77F9B-4372-4984-BDF6-CC8EE0F9A2B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Books Module", "Books Module", "{403434C5-DD3F-447D-855A-E7A600469FA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "User Module", "User Module", "{475A954F-94D5-49F7-BB77-CD621BD31C41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.Users", "RiverBooks.Users\RiverBooks.Users.csproj", "{8B8F15A7-8AF8-47C9-A629-79026BF75728}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,9 +37,18 @@ Global
 		{50D678A9-379F-4C58-891E-C4A45F682E42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50D678A9-379F-4C58-891E-C4A45F682E42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50D678A9-379F-4C58-891E-C4A45F682E42}.Release|Any CPU.Build.0 = Release|Any CPU
-		{77A7BF83-771E-4F4A-8024-D2B157EDDD09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{77A7BF83-771E-4F4A-8024-D2B157EDDD09}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{77A7BF83-771E-4F4A-8024-D2B157EDDD09}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{77A7BF83-771E-4F4A-8024-D2B157EDDD09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25B77F9B-4372-4984-BDF6-CC8EE0F9A2B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25B77F9B-4372-4984-BDF6-CC8EE0F9A2B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25B77F9B-4372-4984-BDF6-CC8EE0F9A2B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25B77F9B-4372-4984-BDF6-CC8EE0F9A2B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B8F15A7-8AF8-47C9-A629-79026BF75728}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B8F15A7-8AF8-47C9-A629-79026BF75728}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B8F15A7-8AF8-47C9-A629-79026BF75728}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B8F15A7-8AF8-47C9-A629-79026BF75728}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{50D678A9-379F-4C58-891E-C4A45F682E42} = {403434C5-DD3F-447D-855A-E7A600469FA0}
+		{25B77F9B-4372-4984-BDF6-CC8EE0F9A2B4} = {403434C5-DD3F-447D-855A-E7A600469FA0}
+		{8B8F15A7-8AF8-47C9-A629-79026BF75728} = {475A954F-94D5-49F7-BB77-CD621BD31C41}
 	EndGlobalSection
 EndGlobal

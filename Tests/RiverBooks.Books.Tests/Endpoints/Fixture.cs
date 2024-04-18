@@ -1,0 +1,19 @@
+using FastEndpoints.Testing;
+using Xunit.Abstractions;
+
+namespace RiverBooks.Tests.Endpoints;
+
+public class Fixture(IMessageSink messageSink): TestFixture<Program>(messageSink)
+{
+    protected override Task SetupAsync()
+    {
+        Client = CreateClient();
+        // Add any setup code here
+        return Task.CompletedTask;
+    }
+    protected override Task TearDownAsync()
+    {
+        Client.Dispose();
+        return base.TearDownAsync();
+    }
+}

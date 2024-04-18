@@ -3,7 +3,7 @@ using FastEndpoints;
 namespace RiverBooks.Books;
 
 internal class GetById(IBookService bookService) :
-    Endpoint<GetBookByIdRequest, BookDTO>
+    Endpoint<GetBookByIdRequest, BookDto>
 {
     private readonly IBookService _bookService = bookService;
 

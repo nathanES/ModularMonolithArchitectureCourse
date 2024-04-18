@@ -24,8 +24,7 @@ internal class List(IBookService bookService) : EndpointWithoutRequest<ListBooks
         });
     }
 }
-
 public class ListBooksResponse
 {
-    public List<BookDTO> Books { get; set; } = new List<BookDTO>();
+    public List<BookDto> Books { get; set; } = new List<BookDto>();
 }

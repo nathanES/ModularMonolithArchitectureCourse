@@ -3,7 +3,7 @@
 GET {{RiverBooks.Web_HostAddress}}/books
 Accept: application/json
 ###
-@BookID = a89f6cd7-4693-457b-9009-02205dbbfe45
+@BookID = 3fa85f64-5717-4562-b3fc-2c963f66afa6
 GET {{RiverBooks.Web_HostAddress}}/books/{{BookID}}
 Accept: application/json
 ###
@@ -24,7 +24,7 @@ GET {{RiverBooks.Web_HostAddress}}/books/a7c61e41-3953-42cd-8f88-d3f698869b35
 Accept: application/json
 
 ###
-DELETE  {{RiverBooks.Web_HostAddress}}/books/a7c61e41-3953-42cd-8f88-d3f698869b35
+DELETE  {{RiverBooks.Web_HostAddress}}/books/3fa85f64-5717-4562-b3fc-2c963f66afa6
 Accept: application/json
 ###
 POST {{RiverBooks.Web_HostAddress}}/books/a7c61e41-3953-42cd-8f88-d3f698869b35/pricehistory
