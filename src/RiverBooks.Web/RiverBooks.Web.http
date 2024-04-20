@@ -1,4 +1,4 @@
-@RiverBooks.Web_HostAddress = http://localhost:5109
+@RiverBooks.Web_HostAddress = https://localhost:7129
 
 GET {{RiverBooks.Web_HostAddress}}/books
 Accept: application/json
@@ -35,3 +35,25 @@ Content-Type: application/json
   "id": "a7c61e41-3953-42cd-8f88-d3f698869b35",
   "newprice": 32.90000
 }
+
+###
+POST {{RiverBooks.Web_HostAddress}}/users
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email":"steve@test.com",
+    "password":"P@ssword1"
+}
+
+###
+POST {{RiverBooks.Web_HostAddress}}/users/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email":"steve@test.com",
+  "password":"P@ssword1"
+}
+
+###
