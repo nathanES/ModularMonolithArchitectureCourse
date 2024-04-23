@@ -2,62 +2,71 @@
 
 GET {{RiverBooks.Web_HostAddress}}/books
 Accept: application/json
+
 ###
-@BookID = a89f6cd7-4693-457b-9009-02205dbbfe45
+
+@BookID=a89f6cd7-4693-457b-9009-02205dbbfe45
 GET {{RiverBooks.Web_HostAddress}}/books/{{BookID}}
 Accept: application/json
+
 ###
+
 POST {{RiverBooks.Web_HostAddress}}/books
 Accept: application/json
 Content-Type: application/json
 
 {
-  "id": "a7c61e41-3953-42cd-8f88-d3f698869b35",
-  "title": "The Return of the Modular Monolith",
-  "author": "ESSLINNA",
-  "price": 82.90000
+  "id": "b89f6cd7-4693-457b-9009-02205dbbfe45",
+  "title": "Modular Monoliths - Getting Started",
+  "author": "Steve Smith",
+  "price": 29.99
 }
+
 ###
 
 # Test the location header
-GET {{RiverBooks.Web_HostAddress}}/books/a7c61e41-3953-42cd-8f88-d3f698869b35
+GET {{RiverBooks.Web_HostAddress}}/books/b89f6cd7-4693-457b-9009-02205dbbfe45
 Accept: application/json
 
 ###
-DELETE  {{RiverBooks.Web_HostAddress}}/books/3fa85f64-5717-4562-b3fc-2c963f66afa6
+
+DELETE {{RiverBooks.Web_HostAddress}}/books/b89f6cd7-4693-457b-9009-02205dbbfe45
 Accept: application/json
+
 ###
-POST {{RiverBooks.Web_HostAddress}}/books/a7c61e41-3953-42cd-8f88-d3f698869b35/pricehistory
+
+POST {{RiverBooks.Web_HostAddress}}/books/b89f6cd7-4693-457b-9009-02205dbbfe45/pricehistory
 Accept: application/json
 Content-Type: application/json
 
 {
-  "id": "a7c61e41-3953-42cd-8f88-d3f698869b35",
-  "newprice": 32.90000
+  "newPrice": 19.99
 }
 
 ###
+
 POST {{RiverBooks.Web_HostAddress}}/users
 Accept: application/json
 Content-Type: application/json
 
 {
-  "email":"steve@test.com",
-    "password":"P@ssword1"
+  "email":"nes@test.com",
+  "password":"Palss@word1"
 }
 
 ###
+
 POST {{RiverBooks.Web_HostAddress}}/users/login
 Accept: application/json
 Content-Type: application/json
 
 {
-  "email":"steve@test.com",
-  "password":"P@ssword1"
+  "email":"nes@test.com",
+  "password":"Palss@word1"
 }
-
 ###
-@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbEFkZHJlc3MiOiJzdGV2ZUB0ZXN0LmNvbSIsImlhdCI6MTcxMzYyMDE0MywiZXhwIjoxNzEzNjIzNzQzLCJuYmYiOjE3MTM2MjAxNDN9.1qJ1lfuxrTVNyOACTGW1cubQf0Vv36Cq2Vu7P-1tMqE
+
+@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbEFkZHJlc3MiOiJuZXNAdGVzdC5jb20iLCJpYXQiOjE3MTM4OTQ5NTcsImV4cCI6MTcxMzg5ODU1NywibmJmIjoxNzEzODk0OTU3fQ.pexQpavZQWBqOjzOOQcqFo4sZAIJ8quFm343SP9wrbY
 
 # Add item to cart
 POST {{RiverBooks.Web_HostAddress}}/cart
@@ -66,8 +75,8 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "bookId":"17c61e41-3953-42cd-8f88-d3f698869b35",
-  "quantity":1
+  "bookId":"a89f6cd7-4693-457b-9009-02205dbbfe45",
+  "quantity":2
 }
 
 ###
@@ -78,16 +87,59 @@ Accept: application/json
 Authorization: Bearer {{token}}
 
 ###
-POST {{RiverBooks.Web_HostAddress}}/cart
-Accept: text/plain
+
+# List All Orders
+GET {{RiverBooks.Web_HostAddress}}/orders
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+# Checkout Cart
+POST {{RiverBooks.Web_HostAddress}}/cart/checkout
+Accept: application/json
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "bookId":"a89f6cd7-4693-457b-9009-02205dbbfe45",
-  "quantity":1
+  "shippingAddressId":"1184ecab-f236-43e9-a48c-a5b9bc59ad11",
+  "billingAddressId":"1184ecab-f236-43e9-a48c-a5b9bc59ad11"
 }
 
 ###
 
+# List Addresses
 
+GET {{RiverBooks.Web_HostAddress}}/users/addresses
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+# Add Address to User
+POST {{RiverBooks.Web_HostAddress}}/users/addresses
+Accept: application/json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "street1": "2 Main St.",
+  "street2": "Number 722",
+  "city":"Anytown",
+  "state":"OH",
+  "postalCode":"12345-6789",
+  "country":"USA"
+}
+
+###
+
+# FLUSH CACHE
+
+POST {{RiverBooks.Web_HostAddress}}/flushcache
+Accept: application/json
+Content-Type: application/json
+
+{
+}
+
+###
