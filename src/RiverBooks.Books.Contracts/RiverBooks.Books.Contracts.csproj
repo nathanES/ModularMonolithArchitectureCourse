@@ -8,5 +8,6 @@
     <ItemGroup>
         <PackageReference Include="Ardalis.Result" Version="8.0.0" />
         <PackageReference Include="MediatR" Version="12.2.0" />
+        <PackageReference Include="StackExchange.Redis" Version="2.7.17" />
     </ItemGroup>
 </Project>

@@ -9,3 +9,8 @@
       MSSQL_SA_PASSWORD: "MyStrongPass123"
       MSSQL_PID: "Developer"
       MSSQL_USER: "SA"
+  redis:
+    image: redis
+    container_name: my-redis
+    ports:
+      - "6379:6379"
