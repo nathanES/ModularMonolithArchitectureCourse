@@ -30,6 +30,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.OrderProcessing.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.Users.Contracts", "RiverBooks.Users.Contracts\RiverBooks.Users.Contracts.csproj", "{C95FF81B-AC5D-4A9C-A62F-666C1F53B48A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.SharedKernel", "RiverBooks.SharedKernel\RiverBooks.SharedKernel.csproj", "{96790F28-07E5-40E7-AFD4-1FC2C5B3BB2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.OrderProcessing.Tests", "RiverBooks.OrderProcessing.Tests\RiverBooks.OrderProcessing.Tests.csproj", "{92FC49C3-C102-4CE7-8641-539C687D349E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +75,14 @@ Global
 		{C95FF81B-AC5D-4A9C-A62F-666C1F53B48A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C95FF81B-AC5D-4A9C-A62F-666C1F53B48A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C95FF81B-AC5D-4A9C-A62F-666C1F53B48A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96790F28-07E5-40E7-AFD4-1FC2C5B3BB2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96790F28-07E5-40E7-AFD4-1FC2C5B3BB2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96790F28-07E5-40E7-AFD4-1FC2C5B3BB2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96790F28-07E5-40E7-AFD4-1FC2C5B3BB2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92FC49C3-C102-4CE7-8641-539C687D349E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92FC49C3-C102-4CE7-8641-539C687D349E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92FC49C3-C102-4CE7-8641-539C687D349E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92FC49C3-C102-4CE7-8641-539C687D349E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{50D678A9-379F-4C58-891E-C4A45F682E42} = {403434C5-DD3F-447D-855A-E7A600469FA0}
@@ -80,5 +92,6 @@ Global
 		{7CB20C98-9CD1-41BE-86F1-D0CDDAF350BE} = {1EAC9BF6-3910-4ECF-893B-77255C6F88B2}
 		{27596799-8DF7-47BF-8F38-6FE97BA90CE5} = {1EAC9BF6-3910-4ECF-893B-77255C6F88B2}
 		{C95FF81B-AC5D-4A9C-A62F-666C1F53B48A} = {475A954F-94D5-49F7-BB77-CD621BD31C41}
+		{92FC49C3-C102-4CE7-8641-539C687D349E} = {1EAC9BF6-3910-4ECF-893B-77255C6F88B2}
 	EndGlobalSection
 EndGlobal
