@@ -14,3 +14,14 @@
     container_name: my-redis
     ports:
       - "6379:6379"
+  mail:
+    image: jijiechen/papercut:latest
+    container_name: papercut
+    ports:
+      - "25:25"
+      - "37408:37408"
+  mongo:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"

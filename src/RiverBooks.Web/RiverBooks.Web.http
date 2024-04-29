@@ -50,7 +50,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "email":"nes@test.com",
+  "email":"ndtldes@test.com",
   "password":"Palss@word1"
 }
 
@@ -61,12 +61,12 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "email":"nes@test.com",
+  "email":"ndtldes@test.com",
   "password":"Palss@word1"
 }
 ###
 
-@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbEFkZHJlc3MiOiJuZXNAdGVzdC5jb20iLCJpYXQiOjE3MTQxOTc1MTIsImV4cCI6MTcxNDIwMTExMiwibmJmIjoxNzE0MTk3NTEyfQ.h32UfLF37sPmPbsgQ4wUvUrB7FUmshdSZNNKJMHwbB4
+@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbEFkZHJlc3MiOiJuZHRsZGVzQHRlc3QuY29tIiwiaWF0IjoxNzE0NDEzODA3LCJleHAiOjE3MTQ0MTc0MDcsIm5iZiI6MTcxNDQxMzgwN30.3S12XriseGQv_89iMia4EkFyZX_FDEJA776jhX02-wY
 
 # Add item to cart
 POST {{RiverBooks.Web_HostAddress}}/cart
@@ -76,7 +76,7 @@ Content-Type: application/json
 
 {
   "bookId":"a89f6cd7-4693-457b-9009-02205dbbfe45",
-  "quantity":0
+  "quantity":1
 }
 
 ###
@@ -102,8 +102,8 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "shippingAddressId":"f136733d-fa67-443c-8cf4-0b1785518af1",
-  "billingAddressId":"f136733d-fa67-443c-8cf4-0b1785518af1"
+  "shippingAddressId":"010317e2-44b1-41d2-b800-e83811779dbb",
+  "billingAddressId":"010317e2-44b1-41d2-b800-e83811779dbb"
 }
 
 ###
@@ -141,5 +141,27 @@ Content-Type: application/json
 
 {
 }
+
+###
+
+# LIST EMAILS
+
+GET {{RiverBooks.Web_HostAddress}}/emails
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+# TOP SALES 1 - REACH IN REPORTING - Bad Practice
+
+GET {{RiverBooks.Web_HostAddress}}/topsales?month=4&year=2024
+Accept: application/json
+
+###
+
+# TOP SALES 2 - EVENT INGESTION CUSTOM DB - Good Practice
+
+GET {{RiverBooks.Web_HostAddress}}/topsales2?month=4&year=2024
+Accept: application/json
 
 ###
